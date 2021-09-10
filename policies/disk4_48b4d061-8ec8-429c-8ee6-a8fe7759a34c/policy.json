@@ -1,0 +1,36 @@
+{
+ "properties": {
+  "displayName": "disk4",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "metadata": {
+   "createdBy": "bb7d0745-2111-4afe-b5a4-bc926a17418d",
+   "createdOn": "2021-09-03T16:34:23.7923605Z",
+   "updatedBy": "bb7d0745-2111-4afe-b5a4-bc926a17418d",
+   "updatedOn": "2021-09-05T13:37:22.9872209Z"
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Compute/disks"
+     },
+     {
+      "not": {
+       "field": "Microsoft.Compute/disks/diskSizeGB",
+       "lessOrEquals": 16
+      }
+     }
+    ]
+   },
+   "then": {
+    "effect": "Deny"
+   }
+  }
+ },
+ "id": "/subscriptions/83522964-448f-48c6-9757-ec2f70454090/providers/Microsoft.Authorization/policyDefinitions/48b4d061-8ec8-429c-8ee6-a8fe7759a34c",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "48b4d061-8ec8-429c-8ee6-a8fe7759a34c"
+}

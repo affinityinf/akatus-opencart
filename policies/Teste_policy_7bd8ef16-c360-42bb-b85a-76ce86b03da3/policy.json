@@ -1,0 +1,39 @@
+{
+ "properties": {
+  "displayName": "Teste policy",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Create policy teste",
+  "metadata": {
+   "category": "DISK",
+   "createdBy": "bb7d0745-2111-4afe-b5a4-bc926a17418d",
+   "createdOn": "2021-09-02T14:10:14.349856Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "allowedLocations": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed locations",
+     "description": "The list of allowed locations for resources.",
+     "strongType": "location"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "not": {
+     "field": "location",
+     "in": "[parameters('allowedLocations')]"
+    }
+   },
+   "then": {
+    "effect": "audit"
+   }
+  }
+ },
+ "id": "/subscriptions/83522964-448f-48c6-9757-ec2f70454090/providers/Microsoft.Authorization/policyDefinitions/7bd8ef16-c360-42bb-b85a-76ce86b03da3",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "7bd8ef16-c360-42bb-b85a-76ce86b03da3"
+}

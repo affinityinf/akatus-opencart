@@ -1,0 +1,37 @@
+{
+ "properties": {
+  "displayName": "policy-disk",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "category": "Compute",
+   "createdBy": "bb7d0745-2111-4afe-b5a4-bc926a17418d",
+   "createdOn": "2021-09-03T12:34:14.4269505Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "listOfAlloweddiskSize": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed disk size",
+     "description": "The list of allowed disk size for resources."
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "not": {
+     "field": "Microsoft.Compute/disks/diskSizeGB",
+     "in": "[parameters('listOfAlloweddiskSize')]"
+    }
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/83522964-448f-48c6-9757-ec2f70454090/providers/Microsoft.Authorization/policyDefinitions/c42c4780-d2f2-4c62-8ecc-5afc094256de",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "c42c4780-d2f2-4c62-8ecc-5afc094256de"
+}

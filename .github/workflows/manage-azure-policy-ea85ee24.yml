@@ -1,0 +1,44 @@
+name: manage-azure-policy-ea85ee24
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/Permite_especific_sku_820f899d-ec61-4b89-9512-7bd2f18b2963/**'
+#      - 'policies/policy-disk_c42c4780-d2f2-4c62-8ecc-5afc094256de/**'
+#      - 'policies/policy_disk_3_c423cdb3-5727-4dde-b6b5-83e264bfe0ac/**'
+#      - 'policies/disk4_48b4d061-8ec8-429c-8ee6-a8fe7759a34c/**'
+#      - 'policies/Storage_accounts_should_be_limited_by_allowed_SKUs_Custom_0521db7f-5cae-479c-9b22-06cab9036db8/**'
+#      - 'policies/Teste_policy_7bd8ef16-c360-42bb-b85a-76ce86b03da3/**'
+#      - 'policies/Teste_sku_ok_fedb8086-decf-467a-93cd-cabaff2409b4/**'
+#      - .github/workflows/manage-azure-policy-ea85ee24.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_ea85ee24}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/Permite_especific_sku_820f899d-ec61-4b89-9512-7bd2f18b2963/**
+          policies/policy-disk_c42c4780-d2f2-4c62-8ecc-5afc094256de/**
+          policies/policy_disk_3_c423cdb3-5727-4dde-b6b5-83e264bfe0ac/**
+          policies/disk4_48b4d061-8ec8-429c-8ee6-a8fe7759a34c/**
+          policies/Storage_accounts_should_be_limited_by_allowed_SKUs_Custom_0521db7f-5cae-479c-9b22-06cab9036db8/**
+          policies/Teste_policy_7bd8ef16-c360-42bb-b85a-76ce86b03da3/**
+          policies/Teste_sku_ok_fedb8086-decf-467a-93cd-cabaff2409b4/**
