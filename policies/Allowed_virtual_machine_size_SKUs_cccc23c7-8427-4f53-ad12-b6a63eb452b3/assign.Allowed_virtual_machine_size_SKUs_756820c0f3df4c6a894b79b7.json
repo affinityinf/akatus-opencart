@@ -1,0 +1,52 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Allowed virtual machine size SKUs",
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cccc23c7-8427-4f53-ad12-b6a63eb452b3",
+  "scope": "/subscriptions/83522964-448f-48c6-9757-ec2f70454090",
+  "notScopes": [],
+  "parameters": {
+   "listOfAllowedSKUs": {
+    "value": [
+     "basic_a0",
+     "basic_a1",
+     "basic_a2",
+     "basic_a3",
+     "basic_a4",
+     "standard_a0",
+     "standard_a1",
+     "standard_a1_v2",
+     "standard_a2",
+     "standard_a2_v2",
+     "standard_a2m_v2",
+     "standard_a3",
+     "standard_a4",
+     "standard_a4_v2",
+     "standard_a4m_v2",
+     "standard_a5",
+     "standard_a6",
+     "standard_a7",
+     "standard_a8_v2",
+     "standard_a8m_v2"
+    ]
+   }
+  },
+  "metadata": {
+   "assignedBy": "Julio Fernandes",
+   "parameterScopes": {
+    "listOfAllowedSKUs": "/subscriptions/83522964-448f-48c6-9757-ec2f70454090"
+   },
+   "createdBy": "bb7d0745-2111-4afe-b5a4-bc926a17418d",
+   "createdOn": "2021-09-14T18:37:58.7474817Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/83522964-448f-48c6-9757-ec2f70454090/providers/Microsoft.Authorization/policyAssignments/756820c0f3df4c6a894b79b7",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "756820c0f3df4c6a894b79b7"
+}
